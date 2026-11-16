@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTC Student Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>MTC</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welcome to MTC</h1>
+            <p>Manage student records and academic performance with ease.</p>
+        </section>
+
+        <section class="dashboard">
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Passed</h3>
+                <p id="passedStudents">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Failed</h3>
+                <p id="failedStudents">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Marks</h3>
+                <p id="averageMarks">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Register a Student</h2>
+
+            <form id="studentForm">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter full name" required>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter age" min="1" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="course">Course</label>
+                <select id="course" required>
+                    <option value="">Select course</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Networking">Networking</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                </select>
+
+                <label for="marks">Marks (0–100)</label>
+                <input type="number" id="marks" placeholder="Enter marks" min="0" max="100" required>
+
+                <button type="submit">Register Student</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Student Records</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search students by name..."
+            >
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Course</th>
+                            <th>Marks</th>
+                            <th>Performance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentList"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No students registered yet.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MTC. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
